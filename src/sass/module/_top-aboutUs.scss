@@ -1,0 +1,127 @@
+@use "global" as *;
+
+.top-aboutUs {
+}
+
+.top-aboutUs__inner {
+    position: relative;
+}
+
+.top-aboutUs__title-wrap {
+    text-align: center;
+}
+
+.top-aboutUs__sub-title {
+    margin-top: rem(12);
+    @include mq("md") {
+        margin-top: rem(12);
+    }
+}
+
+.top-aboutUs__container {
+    margin-top: rem(31);
+    @include mq("md") {
+        margin-top: rem(40);
+        position: relative;
+    }
+}
+
+.top-aboutUs__image-box {
+    position: relative;
+}
+
+.top-aboutUs__image-left {
+    position: relative;
+    width: 37.10144%;
+    z-index: 0;
+}
+
+.top-aboutUs__image-left img {
+    aspect-ratio: 128/194;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-aboutUs__image-right {
+    position: relative;
+    width: 81.44927%;
+    margin-left: auto;
+    margin-top: -48.7%;
+}
+
+.top-aboutUs__image-right::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(49, 45, 57, 0.2);
+}
+
+.top-aboutUs__image-right img {
+    aspect-ratio: 281/186;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-aboutUs__text-wrap {
+    margin-top: rem(40);
+    @include mq("md") {
+        margin-top: initial;
+        position: absolute;
+        top: 48%;
+        left: 58.5%;
+        transform: translate(-50%, -50%);
+        width: 71%;
+        display: flex;
+        z-index: 2;
+    }
+}
+
+.top-aboutUs__sub-head {
+    font-size: rem(40);
+    font-weight: $regular;
+    line-height: 1;
+    font-family: $font-en2;
+    text-transform: capitalize;
+    @include mq("md") {
+        font-size: rem(80);
+        font-weight: $regular;
+        line-height: calc(100 / 80);
+        width: 50%;
+    }
+}
+
+.top-aboutUs__text {
+    font-size: rem(14);
+    @include mq("md") {
+        padding-top: rem(30);
+    }
+}
+
+.top-aboutUs__text span {
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+}
+
+
+.top-aboutUs__sub-head span {
+    text-transform: capitalize;
+}
+
+.top-aboutUs__content {
+    margin-top: rem(16);
+    @include mq("md") {
+        margin-top: initial;
+        width: 50%;
+    }
+}
+
+.top-aboutUs__button {
+    margin-top: rem(40);
+    text-align: center;
+}

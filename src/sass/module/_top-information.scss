@@ -1,0 +1,81 @@
+@use "global" as *;
+
+.top-information {
+    background-image: url("../images/common/background-img2.webp");
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: rem(86) 0;
+    @include mq("md") {
+        padding: rem(100) 0;
+    }
+}
+
+.top-information__title-wrap {
+    text-align: center;
+}
+
+.top-information__sub-title {
+    margin-top: rem(12);
+}
+
+.top-information__wrap {
+    margin-top: rem(28);
+    @include mq("md") {
+        margin-top: rem(42);
+        display: flex;
+    }
+}
+
+.top-information__image {
+    @include mq("md") {
+        width: 50%;
+    }
+}
+
+.top-information__image img {
+    aspect-ratio: 345 /227;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-information__content {
+    margin-top: rem(28);
+    @include mq("md") {
+        margin-top: initial;
+        margin-left: rem(48);
+        width: 45.555%;
+        padding-top: rem(60);
+    }
+}
+
+.top-information__head {
+    font-size: rem(20);
+    font-weight: $bold;
+    color: $white;
+    line-height: 1;
+    border-bottom: 1px solid $white2;
+    padding-bottom: rem(4);
+    @include mq("md") {
+        font-size: rem(24);
+        padding-bottom: rem(8);
+    }
+}
+
+.top-information__text {
+    color: $white;
+    margin-top: rem(8);
+    font-size: rem(14);
+    line-height: calc(24 / 16);
+    letter-spacing: 0.1em;
+    @include mq("md") {
+        font-size: rem(15);
+    }
+}
+
+.top-information__button {
+    margin-top: rem(38);
+    text-align: center;
+}

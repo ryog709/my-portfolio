@@ -1,0 +1,122 @@
+@use "global" as *;
+
+.top-limited {
+    overflow-x: hidden;
+    padding-block: rem(5);
+}
+
+.top-limited__header {
+    display: block;
+    position: relative;
+}
+
+.top-limited__title-wrap {
+    text-align: center;
+}
+
+.top-limited__swiper-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: rem(82);
+    position: absolute;
+    right: calc(50% - min(40vw, rem(540)));
+    top: 3%;
+}
+
+.top-limited__swiper-button-prev,
+.top-limited__swiper-button-next {
+    margin-top: initial;
+}
+
+.top-limited__swiper-container {
+    margin-top: rem(26);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    @include mq("md") {
+        margin-top: rem(38);
+    }
+}
+
+.top-limited__swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.61, 0.03, 0.09, 0.93);
+}
+
+.top-limited__swiper-slide {
+    padding: rem(3) 0;
+    height: auto;
+    max-width: rem(280);
+    width: 100%;
+    margin-right: rem(20);
+    @include mq("md") {
+        max-width: rem(333);
+        width: 100%;
+        margin-right: rem(40);
+    }
+}
+
+.top-limited__button {
+    text-align: center;
+    margin-top: rem(34);
+    @include mq("md") {
+        margin-top: rem(76);
+    }
+}
+
+.top-limited {
+    .swiper {
+    }
+
+    /* Swiperの矢印ボタンのスタイル調整 */
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: auto; /* Swiperボタンの幅をオートに */
+        height: auto; /* Swiperボタンの高さをオートに */
+        background: none; /* 背景色をなしに */
+        position: static; /* 絶対位置指定をオフに */
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        border-radius: 50%;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        opacity: 0.7;
+        transition: 0.7s;
+        background-color: rgba(151, 149, 149, 0.3);
+    }
+
+    /* 前へ次への矢印カスタマイズ */
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        display: none;
+        @include mq("md") {
+            display: block;
+            content: "";
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: rem(80);
+            width: rem(80);
+        }
+    }
+
+    /* 前への矢印カスタマイズ */
+    .swiper-button-prev:after {
+        mask-image: url(../images/common/swiper-button-prev.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: $red-accent;
+        opacity: 0.9;
+    }
+    /* 次への矢印カスタマイズ */
+    .swiper-button-next:after {
+        mask-image: url(../images/common/swiper-button-next.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: $red-accent;
+        opacity: 0.9;
+    }
+}

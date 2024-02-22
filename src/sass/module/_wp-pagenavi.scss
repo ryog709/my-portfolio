@@ -1,0 +1,56 @@
+@use "global" as *;
+
+.wp-pagenavi {
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+    color: $gray-accent;
+    border: 1px solid $gray-accent;
+    background-color: $white;
+    padding-block: rem(6);
+    padding-inline: rem(13.5);
+    margin: 0 rem(6);
+    white-space: nowrap;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+.wp-pagenavi a:first-child {
+    margin-right: rem(34);
+    padding-inline: rem(10);
+}
+
+.wp-pagenavi a:last-child {
+    margin-left: rem(34);
+    padding-inline: rem(10);
+}
+
+.wp-pagenavi a:hover {
+    color: $white;
+    background-color: $gray3;
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.wp-pagenavi a:first-child:hover::before,
+.wp-pagenavi a:last-child:hover::after {
+    border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    transition: 0.3s ease-in-out;
+}
+
+.wp-pagenavi span.current {
+    color: #fff;
+    background-color: $gray3;
+    border-color: $gray-accent;
+    font-weight: bold;
+}

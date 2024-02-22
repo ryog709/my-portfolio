@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.faq {
+}
+
+.faq__inner.inner {
+    @include mq("md") {
+      max-width: rem(750);
+      width: 100%;
+    }
+}
+
+.faq__inner {
+    position: relative;
+}

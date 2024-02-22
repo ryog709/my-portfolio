@@ -1,0 +1,131 @@
+@use "global" as *;
+
+.legal-document {
+}
+
+.legal-document__inner {
+    max-width: rem(630);
+    width: 100%;
+    padding-right: $padding-sp;
+    padding-left: $padding-sp;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    @include mq("md") {
+        max-width: rem(850);
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
+}
+
+.legal-document__title {
+    @include mq("md") {
+        font-size: rem(32);
+    }
+}
+
+.legal-document__introduction {
+    margin-top: rem(40);
+    font-size: rem(16);
+    line-height: 2;
+}
+
+.legal-document__items {
+    margin-top: rem(32);
+    text-align: justify;
+}
+
+.legal-document__item-text {
+    line-height: 2;
+}
+
+.legal-document__item + .legal-document__item {
+    margin-top: rem(32);
+    @include mq(md) {
+        margin-top: rem(32);
+    }
+}
+
+.legal-document__description {
+    font-size: rem(16);
+    line-height: 2;
+}
+
+.legal-document__description-numbers {
+    counter-reset: number;
+}
+
+.legal-document__description-number {
+    padding-left: rem(22);
+    text-indent: rem(-15);
+}
+
+.legal-document__description-number::before {
+    content: counter(number) ". ";
+    counter-increment: number;
+}
+
+//WordPressカスタマイズ
+//プライバシーポリシー
+.legal-document__policy {
+    margin-top: rem(40);
+    font-size: rem(16);
+    line-height: 2;
+    text-align: justify;
+}
+
+.legal-document__policy > ol:first-of-type  {
+    margin-top: rem(32);
+}
+
+.legal-document__policy p {
+    margin-top: rem(32);
+    line-height: 2;
+}
+
+.legal-document__policy ol {
+    counter-reset: number;
+}
+
+.legal-document__policy ol li {
+    padding-left: rem(22);
+    text-indent: rem(-15);
+}
+
+.legal-document__policy ol li::before {
+    content: counter(number) ". ";
+    counter-increment: number;
+}
+
+//利用規約
+.legal-document__terms {
+    margin-top: rem(40);
+    font-size: rem(16);
+    line-height: 2;
+    text-align: justify;
+}
+
+.legal-document__terms p {
+    margin-top: rem(32);
+    line-height: 2;
+}
+
+.legal-document__terms p:nth-of-type(2) {
+    margin-top: initial;
+}
+
+.legal-document__terms ol {
+    counter-reset: number;
+    margin-top: rem(32);
+}
+
+.legal-document__terms ol li {
+    padding-left: rem(22);
+    text-indent: rem(-15);
+}
+
+.legal-document__terms ol li::before {
+    content: counter(number) ". ";
+    counter-increment: number;
+}
+

@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.no-posts-text {
+	font-size: rem(16);
+	color: $green;
+	text-align: center;
+}

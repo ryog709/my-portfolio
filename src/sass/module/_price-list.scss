@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.price-list {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid $gray-accent;
+}
+
+
+.price-list_row {
+    display: flex;
+    flex-wrap: wrap;
+    @include mq("md") {
+        display: table-row;
+    }
+}
+
+.price-list__head {
+    width: 100%;
+    font-size: rem(16);
+    font-weight: $bold;
+    color: #fff;
+    background-color: $gray-accent;
+    @include mq(md){
+        width: 28.57142857142857%;
+    }
+}
+
+.price-list__head span {
+    position: relative;
+}
+
+.price-list__course,
+.price-list__value {
+    padding-block: rem(5);
+    padding-inline: rem(10);
+    font-size: rem(16);
+    min-height: rem(60);
+    display: flex;
+    align-items: center;
+    @include mq("md") {
+        display: table-cell;
+        padding-block: rem(17);
+        padding-inline: rem(14);
+    }
+}
+
+.price-list__course {
+    flex: 0.78;
+    border-top: 1px solid $gray-accent;
+    border-left: none;
+    line-height: 1.5;
+    justify-content: center;
+    @include mq(md){
+        border-left: 1px solid $gray-accent;
+        width: 48.57142857142857%;
+        text-align: left;
+    }
+}
+
+.price-list__value {
+    border-top: 1px solid $gray-accent;
+    border-left: 1px solid $gray-accent;
+    flex: 0.29;
+    justify-content: flex-end;
+    padding-right: rem(14);
+    word-break: break-all;
+    white-space: normal;
+    @include mq(md) {
+        width: 23.14285714285714%;
+        text-align: right;
+    }
+}

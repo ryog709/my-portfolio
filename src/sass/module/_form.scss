@@ -1,0 +1,157 @@
+@use "global" as *;
+
+.form {
+}
+
+.form__wrap {
+    padding-bottom: rem(24);
+    border-bottom: 1px dotted $white;
+    @include mq("md") {
+        padding-bottom: rem(39);
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.form__wrap.form__wrap--select {
+    @include mq("md") {
+        align-items: center;
+    }
+}
+
+.form__wrap {
+    margin-top: rem(26);
+    @include mq("md") {
+        margin-top: rem(38);
+    }
+}
+
+.form__label {
+    font-size: rem(16);
+    font-weight: $bold;
+    line-height: 1;
+    @include mq("md") {
+        width: 31.42857142857143%;
+    }
+}
+
+.form__label span {
+    margin-left: rem(8);
+    padding-block: rem(4.5);
+    padding-inline: rem(14);
+    display: inline-block;
+    font-size: rem(12);
+    color: $white;
+    background-color: $red-accent;
+    letter-spacing: 4.8px;
+}
+
+.form__input,
+.form__radio,
+.form__textarea {
+    margin-top: rem(16);
+    @include mq("md") {
+        margin-top: initial;
+    }
+}
+
+
+.form__checkbox {
+    margin-top: rem(12);
+    @include mq("md") {
+        margin-top: 0;
+        padding-top: rem(4);
+        width: 68.57142857142857%;
+    }
+}
+
+.form__select {
+    margin-top: rem(21);
+    @include mq("md") {
+        margin-top: initial;
+        width: 68.57142857142857%;
+    }
+}
+
+.form__check {
+    margin-top: rem(32);
+    margin-inline: auto;
+    @include mq("md") {
+        margin-top: rem(76);
+    }
+}
+
+.form__input,
+.form__textarea {
+    flex-grow: 1;
+    @include mq("md") {
+      width: 68.57142857142857%;
+    }
+}
+
+
+.form__submit {
+    margin-top: rem(25);
+    text-align: center;
+    margin-inline: auto;
+    @include mq("md") {
+        margin-top: rem(40);
+    }
+}
+
+.form__error {
+    color: $red;
+    font-size: rem(14);
+    text-align: center;
+    padding-left: 1em;
+    text-indent: -1em;
+    display: none;
+}
+
+.form__error.is-error {
+    display: block;
+}
+
+input.is-error,
+textarea.is-error {
+    border: 1px solid $red;
+    background-color: rgba(201, 72, 0, 0.2);
+}
+
+input.is-error {
+    color: $white;
+}
+
+.wpcf7-spinner {
+    display: none !important;
+}
+
+.wpcf7-not-valid-tip {
+  display: none;
+}
+
+.wpcf7-form.invalid .wpcf7-response-output {
+    color: $red;
+    font-size: rem(14);
+    text-align: center;
+    padding-left: 1em;
+    text-indent: -1em;
+    border-color: transparent !important;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+    display: none;
+}
+
+.wpcf7-not-valid[type=text], .wpcf7-not-valid[type=tel], .wpcf7-not-valid[type=email], textarea.wpcf7-not-valid, .wpcf7-not-valid [type=checkbox] + span::before {
+    background: rgba(201, 72, 0, 0.2);
+    border: 1px solid $red;
+}
+
+.wpcf7 .wpcf7-submit:disabled {
+    cursor: not-allowed;
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}

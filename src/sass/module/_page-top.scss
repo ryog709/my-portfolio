@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.page-top {
+    bottom: 0;
+    padding: rem(20);
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+}
+
+.page-top span {
+    width: rem(48);
+    height: rem(48);
+    display: block;
+    @include mq("md") {
+        width: rem(80);
+        height: rem(80);
+    }
+}
+.page-top__button {
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.7s;
+}
+
+.page-top__button:hover {
+    background-color: rgba(151, 149, 149, 0.3); /* ホバー時の背景色 */
+}
+
+.page-top__button:after {
+    display: none;
+    @include mq("md") {
+        display: block;
+        content: "";
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: rem(80);
+        width: rem(80);
+        mask-image: url(../images/common/scroll-button.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: $red-accent; /* この行は以前の設定を維持 */
+    }
+}

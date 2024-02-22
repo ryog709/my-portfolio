@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.pagenavi {
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	gap: rem(82);
+}
+
+.pagenavi a {
+    color: $gray-accent;
+    border: 1px solid $gray-accent;
+    background-color: $white;
+    padding-block: rem(6);
+    padding-inline: rem(10);
+    margin: 0 rem(6);
+    white-space: nowrap;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+.pagenavi-prev::before,
+.pagenavi-next::before {
+    border-right: 1px solid $gray-accent;
+    border-top: 1px solid $gray-accent;
+    content: "";
+    display: inline-block;
+    margin-bottom:  rem(2);
+    height: 0.7em;
+    width: 0.7em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.pagenavi-prev::before {
+    margin-right:  rem(5);
+    transform: rotate(45deg);
+}
+
+.pagenavi-next::before {
+    margin-left:  rem(5);
+    transform: rotate(220deg);
+}
+
+.pagenavi a:hover {
+    color: $white;
+    background-color: $gray-accent;
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.pagenavi-next:hover::before,
+.pagenavi-prev:hover::before  {
+    border-right: 1px solid $white;
+    border-top: 1px solid $white;
+    transition: 0.3s ease-in-out;
+}

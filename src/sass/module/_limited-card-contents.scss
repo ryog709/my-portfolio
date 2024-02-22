@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.limited-card-contents {
+}
+
+.limited-card-contents__inner {
+    position: relative;
+    max-width: rem(600);
+    width: 100%;
+    padding-inline: rem(47.5);
+    margin-inline: auto;
+    position: relative;
+    @include mq("md") {
+        max-width: $inner + strip-unit($padding-pc) * 2;
+        padding-right: $padding-pc;
+        padding-left: $padding-pc;
+    }
+}
+
+.limited-card-contents__wp-pagenavi {
+    margin-top: rem(80);
+    @include mq("md") {
+      margin-top: rem(76);
+    }
+}

@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.side-menu-title {
+    height: rem(50);
+    border-left: rem(8) solid $red;
+    background-color: $gray2;
+    font-size: rem(24);
+    font-weight: $regular;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+}

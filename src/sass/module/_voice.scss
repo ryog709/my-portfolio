@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.voice {
+}
+
+.voice__inner {
+    position: relative;
+}
+
+.voice__wp-pagenavi {
+    margin-top: rem(80);
+    @include mq("md") {
+        margin-top: rem(72);
+    }
+}

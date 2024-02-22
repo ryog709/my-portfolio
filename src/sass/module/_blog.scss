@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.blog {
+}
+
+.blog__inner {
+    position: relative;
+}
+
+
+.blog__main-menu {
+        width: calc(333 / 345) * 100%;
+    margin-inline: auto;
+    @include mq("md") {
+        width: calc(706 / 1080) * 100%;
+    }
+}
+
+.blog__wp-pagenavi {
+    margin-top: rem(80);
+    @include mq("md") {
+        margin-top: rem(78);
+    }
+}

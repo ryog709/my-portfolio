@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.contact-form {
+}
+
+.contact-form__inner.inner {
+    @include mq("md") {
+        max-width: rem(750);
+    }
+}
+
+.contact-form__inner {
+    position: relative;
+}

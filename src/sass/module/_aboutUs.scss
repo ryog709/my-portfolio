@@ -1,0 +1,109 @@
+@use "global" as *;
+
+.aboutUs {
+}
+
+.aboutUs__inner {
+    position: relative;
+}
+
+.aboutUs__container {
+    position: relative;
+}
+
+.aboutUs__image-box {
+    position: relative;
+}
+
+.aboutUs__image-left {
+    @include mq("md") {
+        position: relative;
+        width: 37.10144%;
+        z-index: -1;
+    }
+}
+
+.aboutUs__image-left img {
+    @include mq("md") {
+        aspect-ratio: 128/194;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.aboutUs__image-right {
+    position: relative;
+    @include mq("md") {
+        width: 81.44927%;
+        margin-top: -49%;
+        margin-left: auto;
+    }
+}
+
+.aboutUs__image-right::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(49, 45, 57, 0.2);
+}
+
+.aboutUs__image-right img {
+    aspect-ratio: 281/186;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.aboutUs__text-box {
+    margin-top: rem(42);
+    z-index: 2;
+    @include mq("md") {
+        position: absolute;
+        top: 39%;
+        left: 57.5%;
+        transform: translate(-50%, -50%);
+        width: 71%;
+        display: flex;
+    }
+}
+
+.aboutUs__sub-head {
+    position: absolute;
+    top: rem(24);
+    left: rem(24);
+    font-weight: $regular;
+    text-transform: capitalize;
+    line-height: 1;
+    font-family: $font-en2;
+    font-size: clamp(rem(40), 25 / 375 * 100vw, rem(80));
+    @include mq("md") {
+        line-height: calc(100 / 80);
+        text-align: justify;
+        min-width: rem(400);
+        position: static;
+    }
+}
+
+.aboutUs__sub-head span {
+    text-transform: capitalize;
+}
+
+.aboutUs__text {
+    font-size: rem(14);
+    letter-spacing: 0.1em;
+    @include mq("md") {
+        color: $white;
+        max-width: rem(400);
+        width: 100%;
+        padding-top: rem(50);
+    }
+}
+
+.aboutUs__text span {
+    text-transform: capitalize;
+}

@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.blog-detail {
+}
+
+.blog-detail__inner {
+	position: relative;
+}
+
+
+.blog-detail__side-menu {
+    margin-top: rem(75);
+    @include mq("md") {
+        margin-top: initial;
+    }
+}

@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.price {
+}
+
+.price__inner.inner {
+    @include mq("md") {
+        max-width: rem(750);
+        width: 100%;
+    }
+}
+
+.price__inner {
+    position: relative;
+}
+
+.price__list {
+    margin-inline: auto;
+}
+
+.price__list + .price__list {
+    margin-top: rem(39);
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}

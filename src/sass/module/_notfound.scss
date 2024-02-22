@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.notfound {
+}
+
+.notfound__inner {
+	position: relative;
+}
+
+.notfound__title {
+	position: relative;
+    font-size: rem(80);
+    color: $white;
+    font-family: $font-en2;
+    letter-spacing: 0.5em;
+	font-weight: $regular;
+	line-height: 1;
+	text-align: center;
+	text-indent: rem(38);
+	@include mq("md") {
+		font-size: rem(160);
+		text-indent: rem(78);
+	}
+}
+
+.notfound__text {
+	color: $white;
+	font-family: $font-en2;
+	text-align: center;
+	font-weight: $regular;
+	margin-top: rem(4);
+	@include mq("md") {
+	  margin-top: rem(41);
+	}
+}
+
+.notfound__button {
+	margin-top: rem(40);
+	text-align: center;
+	@include mq("md") {
+	  margin-top: rem(79);
+	}
+}
