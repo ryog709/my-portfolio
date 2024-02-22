@@ -62,32 +62,27 @@ jQuery(function ($) {
     if ($(".js-opening-mv-mask").length) {
         // ヘッダーを初期状態で非表示に設定
         gsap.set(".js-header", { autoAlpha: 0 });
-        // アニメーションのタイムラインを設定
-        const openingTL = gsap.timeline({
-            defaults: { duration: 3, ease: "power4.inOut" },
-            onComplete: startMvSwiperAnimation // アニメーション完了時に実行する関数
-        });
-        // 以下、アニメーションの詳細設定
-        openingTL.to(".js-opening-mv-mask", { y: "-100%", duration: 5 }) // マスクを上にスライドさせて非表示にする
-            .fromTo(".js-opening-mv__title", { y: 0 }, { y: 240, duration: 3 }, "-=5") // タイトルを下にスライドさせる
-            .fromTo(".js-mv-swiper", { autoAlpha: 0 }, { autoAlpha: 1 }, "-=2.9") // スワイパーをフェードインさせる
-            .fromTo(".js-mv-title", { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 2 }, "-=2") // タイトルのクリップパスをアニメーションで変更
-            .fromTo(".js-header", { y: -90, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.3 }, "-=2"); // ヘッダーをフェードインしつつ下から上にスライドさせる
+        // アニメーションのタイムラインを設定。完了時にスライダーのアニメーションを開始する
+        const openingTL = gsap.timeline({ defaults: { duration: 5, ease: "power4.inOut" }, onComplete: startMvSwiperAnimation });
+        // アニメーションの順序を定義
+        openingTL.to(".js-opening-mv-mask", { y: "-100%" }) // マスクを上にスライドさせて非表示にする
+            .fromTo(".js-opening-mv__title", { y: 0 }, { y: 240 }, "-=5.9") // タイトルを下に動かす
+            .fromTo(".js-mv-swiper", { autoAlpha: 0 }, { autoAlpha: 1 }, "-=3.9") // スライダーをフェードイン
+            .fromTo(".js-mv-title", { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 2.4 }, "-=3.1") // タイトルのクリップパスをアニメーション
+            .fromTo(".js-header", { y: -90, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6 }, "-=3"); // ヘッダーをフェードインさせる
     }
-    // `startMvSwiperAnimation` 関数の定義
+
+    // スライダーのアニメーションを開始する関数
     function startMvSwiperAnimation() {
-        // Swiperインスタンスの設定
-        const mvSwiper = new Swiper(".js-mv-swiper", {
-            loop: true, // ループさせる
-            effect: "fade", // フェードエフェクトを使用
-            autoplay: {
-                delay: 3000, // 自動再生の遅延時間（ミリ秒）
-                disableOnInteraction: false, // インタラクション後も自動再生を続ける
-            },
-            speed: 3000, // アニメーションのスピード（ミリ秒）
-            allowTouchMove: false, // タッチ操作によるスワイプを禁止
+        new Swiper(".js-mv-swiper", {
+            loop: true, // ループを有効にする
+            effect: "fade", // フェード効果を使用する
+            autoplay: { delay: 3000, disableOnInteraction: false }, // 自動再生設定（3秒毎に次のスライドへ）
+            speed: 3000, // アニメーションの速度
+            allowTouchMove: false, // タッチ操作によるスライドの移動を不許可
         });
     }
+
 
         //カード型レイアウトスライダー
     if (document.querySelector(".js-card-swiper")) {
@@ -201,8 +196,9 @@ jQuery(function ($) {
     });
 
     // faqアコーディオンメニュー
-    $(".js-faq-question").next().slideDown();
-    $(".js-faq-question").addClass("is-open");
+    $(".js-faq-question").first().next().slideDown();
+    $(".js-faq-question").first().addClass("is-open");
+    // 全てのFAQの質問にクリックイベントを適用
     $(".js-faq-question").on("click", function () {
         $(this).next().slideToggle(600);
         $(this).toggleClass("is-open");
