@@ -63,10 +63,10 @@ jQuery(function ($) {
         // ヘッダーを初期状態で非表示に設定
         gsap.set(".js-header", { autoAlpha: 0 });
         // アニメーションのタイムラインを設定。完了時にスライダーのアニメーションを開始する
-        const openingTL = gsap.timeline({ defaults: { duration: 5, ease: "power4.inOut" }, onComplete: startMvSwiperAnimation });
+        const openingTL = gsap.timeline({ defaults: { duration: 5, ease: "expo.inOut" }, onComplete: startMvSwiperAnimation });
         // アニメーションの順序を定義
         openingTL.to(".js-opening-mv-mask", { y: "-100%" }) // マスクを上にスライドさせて非表示にする
-            .fromTo(".js-opening-mv__title", { y: 0 }, { y: 240 }, "-=5.9") // タイトルを下に動かす
+            .fromTo(".js-opening-mv__title", { y: 0 }, { y: 240 }, "-=5.4") // タイトルを下に動かす
             .fromTo(".js-mv-swiper", { autoAlpha: 0 }, { autoAlpha: 1 }, "-=3.9") // スライダーをフェードイン
             .fromTo(".js-mv-title", { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 2.4 }, "-=3.1") // タイトルのクリップパスをアニメーション
             .fromTo(".js-header", { y: -90, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6 }, "-=3"); // ヘッダーをフェードインさせる

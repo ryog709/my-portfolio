@@ -76,7 +76,7 @@ jQuery(function ($) {
     var openingTL = gsap.timeline({
       defaults: {
         duration: 5,
-        ease: "power4.inOut"
+        ease: "expo.inOut"
       },
       onComplete: startMvSwiperAnimation
     });
@@ -88,7 +88,7 @@ jQuery(function ($) {
       y: 0
     }, {
       y: 240
-    }, "-=5.9") // タイトルを下に動かす
+    }, "-=5.4") // タイトルを下に動かす
     .fromTo(".js-mv-swiper", {
       autoAlpha: 0
     }, {
